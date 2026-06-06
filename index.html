@@ -5,17 +5,17 @@
     <meta name="google-site-verification" content="w4BJbqCdectM3DbKPyuSK5vFYoqlznqiwgAhWGbgaBY" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pi-Store | Launch Your Branded Digital Product Store</title>
-    <meta name="description" content="Pi-Store is the ultimate white-label digital product platform. Creators sell ebooks, templates, and reels under their own brand. Connect payment gateways, keep 80% margins, and launch in 60 seconds." />
-    <meta name="keywords" content="digital products, creator economy, sell ebooks, sell templates, white label store, Pi-Store, make money online" />
-    <meta name="author" content="Pi-Store" />
+    <title>BioHere | The Ultimate Creator Storefront & Link-in-Bio</title>
+    <meta name="description" content="BioHere is the all-in-one link-in-bio and digital storefront for creators. Easily sell your own digital products, courses, and templates directly to your audience." />
+    <meta name="keywords" content="link in bio, creator storefront, digital products, creator economy, sell ebooks, sell templates, BioHere, creator monetization" />
+    <meta name="author" content="BioHere" />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://getpistore.vercel.app" id="canonical-url" />
+    <link rel="canonical" href="https://biohere.vercel.app" id="canonical-url" />
     
     <script>
       (function() {
         var path = window.location.pathname;
-        var baseUrl = 'https://getpistore.vercel.app';
+        var baseUrl = 'https://biohere.vercel.app';
         
         document.addEventListener('DOMContentLoaded', function() {
           var canonical = document.getElementById('canonical-url');
@@ -27,7 +27,7 @@
           if (path.startsWith('/s/')) {
             var splitted = path.split('/');
             var storeSlug = splitted[2];
-            var productNameSlug = splitted[4]; // e.g. /s/store-slug/p/product-slug
+            var productNameSlug = splitted[4];
             
             if (storeSlug) {
               var storeName = storeSlug.split('-').map(function(word) {
@@ -41,15 +41,15 @@
               var twTitle = document.querySelector('meta[name="twitter:title"]');
               var twDesc = document.querySelector('meta[name="twitter:description"]');
 
-              var dynamicTitle = storeName + " | Premium Digital Products";
-              var dynamicDesc = "Welcome to " + storeName + "'s digital storefront. Discover and purchase premium digital products, ebooks, and templates instantly.";
+              var dynamicTitle = storeName + " | BioHere Storefront";
+              var dynamicDesc = "Check out " + storeName + "'s official store on BioHere. Get direct access to their premium digital products, courses, and more.";
 
               if (productNameSlug) {
                 var productName = productNameSlug.split('-').map(function(word) {
                   return word.charAt(0).toUpperCase() + word.slice(1);
                 }).join(' ');
                 dynamicTitle = productName + " | " + storeName;
-                dynamicDesc = "Get access to " + productName + " by " + storeName + ". Instantly download this premium digital product.";
+                dynamicDesc = "Get " + productName + " by " + storeName + ". Instantly download this premium product directly from their BioHere store.";
               }
 
               if (title) title.textContent = dynamicTitle;
@@ -65,37 +65,37 @@
     </script>
 
     <!-- Open Graph/Social Preview -->
-    <meta property="og:title" content="Pi-Store | The Easiest Digital Store Builder">
-    <meta property="og:description" content="Launch your own branded digital storefront. Access a premium catalog, set your own prices, and keep 80% of your profit margin. Start your 7-day trial for just ₹1.">
+    <meta property="og:title" content="BioHere | The Ultimate Creator Storefront & Link-in-Bio">
+    <meta property="og:description" content="BioHere is the all-in-one link-in-bio and digital storefront for creators. Easily sell your own digital products, courses, and templates directly to your audience.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://getpistore.vercel.app">
-    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pi-symbol.svg">
-    <meta property="og:site_name" content="Pi-Store">
+    <meta property="og:url" content="https://biohere.vercel.app">
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/4e/Pi-symbol.svg"> <!-- Optional: Update image path later -->
+    <meta property="og:site_name" content="BioHere">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pi-Store | Launch Your Branded Digital Product Store">
-    <meta name="twitter:description" content="Launch your own branded digital storefront. Access a premium catalog, set your prices, and keep 80% profit margins.">
+    <meta name="twitter:title" content="BioHere | The Ultimate Creator Storefront">
+    <meta name="twitter:description" content="BioHere is the all-in-one link-in-bio and digital storefront for creators. Sell your products seamlessly.">
     
     <!-- Schema.org JSON-LD for Search Engines and LLMs -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "Pi-Store",
+        "name": "BioHere",
         "operatingSystem": "Web",
         "applicationCategory": "BusinessApplication",
-        "description": "A platform for creators and digital sellers to launch their own white-label storefronts, selling premium digital products with an 80/20 profit margin split.",
+        "description": "A trusted creator platform for link-in-bio pages and selling digital products directly to fans.",
         "offers": {
           "@type": "Offer",
-          "price": "99.00",
+          "price": "0.00",
           "priceCurrency": "INR",
           "availability": "https://schema.org/InStock",
-          "description": "₹99/month following a ₹1 7-day trial."
+          "description": "Start for free, monetize your audience."
         },
         "publisher": {
           "@type": "Organization",
-          "name": "Pi-Store"
+          "name": "BioHere"
         }
       }
     </script>
@@ -108,42 +108,26 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Where do these digital products come from?",
+            "name": "Who is BioHere for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We provide a curated catalog of high-quality Private Label Rights (PLR) ebooks, templates, and courses. These are products we have already tested in the market to ensure they actually sell. Once you add them to your store, you can sell them as your own and keep 100% of the profits."
+              "text": "BioHere is designed for creators, influencers, educators, and anyone wanting a simple link-in-bio to sell their digital products directly to their audience."
             }
           },
           {
             "@type": "Question",
-            "name": "Do I need to know how to code or design?",
+            "name": "Can I use my own products?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely not. Our 1-Click Launch system generates a mobile-optimized, high-converting storefront for you instantly. Just click a button, and your store is live."
+              "text": "Yes! BioHere is built for you to upload and sell your own digital products, ebooks, templates, and services."
             }
           },
           {
             "@type": "Question",
-            "name": "How do I get paid?",
+            "name": "How do payouts work?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We collect the payments from your customers on your behalf to save you the headache of setting up complex merchant accounts. We then pay you out directly to your bank account or Stripe."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the catch with the ₹1 Trial?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No catch. We want you to experience the dopamine hit of making your first sale without risking your own money upfront. It's ₹1 for 7 days, and then ₹99/month if you decide to keep your store. Cancel anytime."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I use Pi-Store if I already have my own products?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! While we provide a catalog of done-for-you products, you can easily upload and sell your own digital products, courses, or coaching calls alongside them."
+              "text": "We handle the secure transaction processing. Payouts are transferred seamlessly to your connected bank account using secure payment gateways."
             }
           }
         ]
@@ -154,28 +138,31 @@
     <div id="root">
       <div style="font-family: system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem; color: #1f2937;">
         <div style="text-align: center; margin-bottom: 2rem;">
-          <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">Pi-Store</h1>
+          <h1 style="font-size: 2rem; font-weight: bold; margin-bottom: 0.5rem;">BioHere</h1>
           <p style="color: #6b7280;">Loading application...</p>
         </div>
         <div style="opacity: 0.8;">
-          <h2>Launch Your Branded Digital Product Store in 60 Seconds</h2>
-          <p>Pi-Store is a platform for creators, influencers, and theme page owners to launch their own white-label storefronts. Sell premium digital products like ebooks, templates, and courses with an 80/20 profit margin split.</p>
+          <h2>Your Link-in-Bio & Creator Storefront</h2>
+          <p>BioHere empowers creators to own their audience. Build a beautiful link-in-bio page and sell your digital products directly.</p>
           
-          <h3>Why choose Pi-Store?</h3>
+          <h3>Why choose BioHere?</h3>
           <ul>
-            <li><strong>1-Click Launch:</strong> Generate a mobile-optimized, high-converting storefront instantly.</li>
-            <li><strong>Zero Inventory:</strong> Access a premium catalog of done-for-you digital products.</li>
-            <li><strong>High Margins:</strong> Keep 80% of your profit margin on every sale.</li>
+            <li><strong>Everything in One Place:</strong> Combine your links and digital products seamlessly.</li>
+            <li><strong>Sell Your Digital Assets:</strong> Ebooks, templates, courses—sell them all directly to your fans.</li>
+            <li><strong>Trusted & Transparent:</strong> Complete control over your content and safe, secure payouts.</li>
           </ul>
 
           <nav style="margin-top: 2rem;">
             <h3>Quick Links</h3>
-            <ul style="display: flex; gap: 1rem; list-style: none; padding: 0;">
+            <ul style="display: flex; gap: 1rem; list-style: none; padding: 0; flex-wrap: wrap;">
               <li><a href="/" style="color: #2563eb; text-decoration: none;">Home</a></li>
               <li><a href="/pricing" style="color: #2563eb; text-decoration: none;">Pricing</a></li>
               <li><a href="/use-cases" style="color: #2563eb; text-decoration: none;">Use Cases</a></li>
               <li><a href="/faq" style="color: #2563eb; text-decoration: none;">FAQ</a></li>
               <li><a href="/comparisons" style="color: #2563eb; text-decoration: none;">Comparisons</a></li>
+              <li><a href="/about" style="color: #2563eb; text-decoration: none;">About</a></li>
+              <li><a href="/contact" style="color: #2563eb; text-decoration: none;">Contact</a></li>
+              <li><a href="/terms" style="color: #2563eb; text-decoration: none;">Terms</a></li>
               <li><a href="/login" style="color: #2563eb; text-decoration: none;">Login / Sign Up</a></li>
             </ul>
           </nav>

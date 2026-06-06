@@ -50,7 +50,7 @@ export default function UserLayout() {
             <div className="w-8 h-8 rounded-lg bg-text-main flex items-center justify-center text-bg-base group-hover:scale-105 transition-transform">
               <Command className="w-4 h-4 text-bg-base" />
             </div>
-            <span className="text-lg font-bold text-text-main tracking-tight">Pi-Store</span>
+            <span className="text-lg font-bold text-text-main tracking-tight">BioHere</span>
           </div>
         </div>
         
@@ -107,7 +107,7 @@ export default function UserLayout() {
              <div className="w-8 h-8 rounded-lg bg-text-main flex items-center justify-center text-bg-base">
               <Command className="w-4 h-4 text-bg-base" />
             </div>
-            <span className="text-lg font-bold text-text-main tracking-tight">Pi-Store</span>
+            <span className="text-lg font-bold text-text-main tracking-tight">BioHere</span>
           </div>
           
           <div className="hidden md:flex items-center text-sm font-medium text-text-muted">

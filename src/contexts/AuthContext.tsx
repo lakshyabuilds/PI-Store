@@ -42,7 +42,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               role,
               email: user.email || '',
               name: user.displayName || 'Unknown User',
-              createdAt: new Date().toISOString()
+              createdAt: new Date().toISOString(),
+              subscriptionStatus: 'trialing'
             };
             
             await setDoc(doc(db, 'users', user.uid), newUser);

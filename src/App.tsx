@@ -33,6 +33,9 @@ import Pricing from './pages/public/Pricing';
 import UseCases from './pages/public/UseCases';
 import Docs from './pages/public/Docs';
 import FAQ from './pages/public/FAQ';
+import About from './pages/public/About';
+import Contact from './pages/public/Contact';
+import Terms from './pages/public/Terms';
 
 // Route Guards
 const RequireAdmin = ({ children }: { children: React.ReactNode }) => {
@@ -71,6 +74,9 @@ function AppRoutes() {
         <Route path="/use-cases" element={<UseCases />} />
         <Route path="/docs" element={<Docs />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       </Route>
 

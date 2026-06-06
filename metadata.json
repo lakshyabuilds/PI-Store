@@ -1,6 +1,6 @@
 {
-  "name": "Pi-Store",
-  "description": "Pi-Store - A white-label digital product storefront platform.",
+  "name": "BioHere",
+  "description": "BioHere - A white-label creator storefront and link-in-bio platform.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

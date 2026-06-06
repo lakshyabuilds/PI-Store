@@ -91,3 +91,38 @@ export interface Wallet {
   productsSoldLastMonth: number;
 }
 
+export interface Lead {
+  id: string;
+  storeId: string;
+  productId?: string;
+  name: string;
+  email?: string;
+  phone?: string;
+  status: 'new' | 'contacted' | 'interested' | 'won' | 'lost';
+  salesValue?: number;
+  notes?: string;
+  createdAt: string;
+}
+
+export interface CrmNote {
+  id: string;
+  leadId: string;
+  note: string;
+  createdBy: string;
+  createdAt: string;
+}
+
+export interface Product {
+  id?: string;
+  title: string;
+  categoryId?: string;
+  shortDescription?: string;
+  longDescription?: string;
+  thumbnail?: string;
+  fileUrl?: string; // SECRET: Download link
+  tags?: string[];
+  status: ProductStatus;
+  price: number; 
+  createdAt?: string;
+}
+
