@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bg-base: var(--bg-base);
+  --color-bg-card: var(--bg-card);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-hover: var(--bg-hover);
+  
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-alert: var(--alert);
+  
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-text-inverted: var(--text-inverted);
+}
+
+:root {
+  --bg-base: #FFFFFF;
+  --bg-card: #F5F5F5;
+  --bg-surface: #EAEAEA;
+  --bg-hover: #D4D4D4;
+  
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-strong: rgba(0, 0, 0, 0.16);
+  
+  --primary: #00C853;
+  --primary-hover: #00A042;
+  --alert: #E60000;
+  
+  --text-main: #121212;
+  --text-muted: #666666;
+  --text-inverted: #FFFFFF;
+}
+
+.dark {
+  --bg-base: #0A0A0A;
+  --bg-card: #171717;
+  --bg-surface: #262626;
+  --bg-hover: #333333;
+  
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  
+  --primary: #39FF14;
+  --primary-hover: #2ED810;
+  --alert: #FF3131;
+  
+  --text-main: #FFFFFF;
+  --text-muted: #A3A3A3;
+  --text-inverted: #0A0A0A;
+}
+
+body {
+  @apply min-h-screen antialiased bg-bg-base text-text-main font-sans selection:bg-primary selection:text-text-inverted;
+}
+
+/* Remove the floating blobs from previous design, keep it stark and clean */
+
+.bg-pattern {
+  background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.15;
+}
+
+/* Snappy Animations for Spring Feel */
+.neo-card {
+  @apply bg-bg-card border border-border-subtle rounded-2xl shadow-sm transition-[transform,shadow,border-color] duration-200 ease-out;
+}
+
+.neo-card:hover {
+  @apply shadow-md border-border-strong transform -translate-y-0.5;
+}
+
+.neo-button {
+  @apply inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+}
+
+.neo-input {
+  @apply bg-bg-surface border border-transparent rounded-xl focus:bg-bg-card focus:border-primary focus:shadow-sm outline-none transition-all duration-200 px-4 py-3 text-text-main placeholder-text-muted text-sm;
+}
+
+.heading-display {
+  @apply font-display tracking-tight font-bold;
+}
+
+/* Skeleton loader with energy */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, var(--bg-surface) 0%, var(--bg-hover) 50%, var(--bg-surface) 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+input, button, textarea, select {
+  @apply outline-none min-h-[40px];
+}
+
+/* Hide autofill background in Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--bg-surface) inset !important;
+    -webkit-text-fill-color: var(--text-main) !important;
+}

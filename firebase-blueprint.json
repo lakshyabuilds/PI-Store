@@ -1,0 +1,115 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "A user of the platform (admin or store owner).",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["admin", "user"] },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "storeId": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["role", "email"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "A digital product uploaded by admin.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "shortDescription": { "type": "string" },
+        "longDescription": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "fileUrl": { "type": "string" },
+        "tags": { "type": "array" },
+        "status": { "type": "string", "enum": ["active", "draft", "archived"] },
+        "price": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "status"]
+    },
+    "Category": {
+      "title": "Category",
+      "description": "Product category.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "Store": {
+      "title": "Store",
+      "description": "A customized storefront for a user.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "logo": { "type": "string" },
+        "brandColor": { "type": "string" },
+        "bio": { "type": "string" },
+        "selectedProductIds": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["ownerId", "name", "slug"]
+    },
+    "Lead": {
+      "title": "Lead",
+      "description": "A captured lead or sales prospect.",
+      "type": "object",
+      "properties": {
+        "storeId": { "type": "string" },
+        "productId": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "status": { "type": "string", "enum": ["new", "contacted", "interested", "won", "lost"] },
+        "source": { "type": "string" },
+        "salesValue": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["storeId", "status", "createdAt"]
+    },
+    "CrmNote": {
+      "title": "CRM Note",
+      "description": "A note attached to a lead.",
+      "type": "object",
+      "properties": {
+        "leadId": { "type": "string" },
+        "note": { "type": "string" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["leadId", "note", "createdBy", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profiles and roles"
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Global product catalog managed by admin"
+    },
+    "/categories/{categoryId}": {
+      "schema": { "$ref": "#/entities/Category" },
+      "description": "Product categories"
+    },
+    "/stores/{storeId}": {
+      "schema": { "$ref": "#/entities/Store" },
+      "description": "White-labeled stores"
+    },
+    "/leads/{leadId}": {
+      "schema": { "$ref": "#/entities/Lead" },
+      "description": "Leads collected by stores"
+    },
+    "/crmNotes/{noteId}": {
+      "schema": { "$ref": "#/entities/CrmNote" },
+      "description": "Notes for leads"
+    }
+  }
+}
