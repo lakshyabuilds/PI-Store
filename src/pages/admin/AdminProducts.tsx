@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { collection, query, getDocs, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
-import { Product, Category } from '../../types';
+import { CatalogProduct, Category } from '../../types';
 import { Plus, Pencil, Trash2, X, Package } from 'lucide-react';
 import { OperationType, handleFirestoreError } from '../../lib/utils';
 
 export default function AdminProducts() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<CatalogProduct[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -15,16 +15,18 @@ export default function AdminProducts() {
   const [isSeeding, setIsSeeding] = useState(false);
 
   // Form State
-  const [formData, setFormData] = useState<Partial<Product>>({
+  const [formData, setFormData] = useState<Partial<CatalogProduct>>({
     title: '',
     categoryId: '',
     shortDescription: '',
     longDescription: '',
-    thumbnail: '',
+    thumbnailUrl: '',
     fileUrl: '',
     status: 'draft',
-    price: 0,
-    tags: []
+    basePrice: 0,
+    srp: 0,
+    tags: [],
+    driveLink: ''
   });
 
   const fetchData = async () => {
@@ -33,7 +35,7 @@ export default function AdminProducts() {
       const cQ = query(collection(db, 'categories'));
       const [pSnap, cSnap] = await Promise.all([getDocs(pQ), getDocs(cQ)]);
       
-      setProducts(pSnap.docs.map(doc => ({ id: doc.id, ...doc.data() } as Product)));
+      setProducts(pSnap.docs.map(doc => ({ id: doc.id, ...doc.data() } as CatalogProduct)));
       setCategories(cSnap.docs.map(doc => ({ id: doc.id, ...doc.data() } as Category)));
     } catch (err) {
       handleFirestoreError(err, OperationType.LIST, 'products/categories');
@@ -59,14 +61,14 @@ export default function AdminProducts() {
       }
       setIsFormOpen(false);
       setEditingId(null);
-      setFormData({ title: '', status: 'draft', price: 0 });
+      setFormData({ title: '', status: 'draft', basePrice: 0, srp: 0 });
       fetchData();
     } catch (err) {
       handleFirestoreError(err, editingId ? OperationType.UPDATE : OperationType.CREATE, 'products');
     }
   };
 
-  const handleEdit = (p: Product) => {
+  const handleEdit = (p: CatalogProduct) => {
     setFormData(p);
     setEditingId(p.id!);
     setIsFormOpen(true);
@@ -89,33 +91,33 @@ export default function AdminProducts() {
 
   const seedDemoProducts = async () => {
     setIsSeeding(true);
-    const demoProducts: Partial<Product>[] = [
+    const demoProducts: Partial<CatalogProduct>[] = [
       {
         title: "Faceless Instagram Reels Bundle (1,000+ Assets)",
         shortDescription: "Viral ready. Just add your own text and audio. Perfect for theme pages.",
         longDescription: "Over 1,000 aesthetic, high-quality faceless videos. Perfect for running luxury and motivation theme pages on Instagram and TikTok without showing your face.",
-        thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+        thumbnailUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
         fileUrl: "https://example.com/download/faceless",
         status: "active",
-        price: 27.00
+        basePrice: 27.00
       },
       {
         title: "ChatGPT Prompts for Marketers",
         shortDescription: "500+ copy-paste prompts to write ads, emails, and landing pages that sell.",
         longDescription: "The ultimate cheat sheet for marketers. Stop wasting hours prompting and get the exact frameworks used by 8-figure copywriters.",
-        thumbnail: "https://images.unsplash.com/photo-1664575196644-808978af9b1f?w=800&q=80",
+        thumbnailUrl: "https://images.unsplash.com/photo-1664575196644-808978af9b1f?w=800&q=80",
         fileUrl: "https://example.com/download/prompts",
         status: "active",
-        price: 19.99
+        basePrice: 19.99
       },
       {
         title: "Ultimate Notion Life OS Layout",
         shortDescription: "Organize your entire life, business, and daily habits in one aesthetic workspace.",
         longDescription: "A complete done-for-you Notion system. Includes habit trackers, CRM, daily journals, and project management tools in a unified aesthetic dashboard.",
-        thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
+        thumbnailUrl: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&q=80",
         fileUrl: "https://example.com/download/notion",
         status: "active",
-        price: 49.00
+        basePrice: 49.00
       }
     ];
 
@@ -165,7 +167,7 @@ export default function AdminProducts() {
           <button
             onClick={() => {
               setEditingId(null);
-              setFormData({ title: '', status: 'draft', price: 0 });
+              setFormData({ title: '', status: 'draft', basePrice: 0, srp: 0 });
               setIsFormOpen(true);
             }}
             className="neo-button px-6 py-3 bg-accent text-white font-semibold flex items-center shadow-sm"
@@ -179,8 +181,8 @@ export default function AdminProducts() {
         {products.map(p => (
            <div key={p.id} className="neo-card p-0 overflow-hidden group flex flex-col transition-all duration-300 hover:shadow-lg hover:border-border-strong bg-bg-card">
              <div className="aspect-[4/3] bg-bg-surface relative shrink-0 border-b border-border-subtle overflow-hidden">
-               {p.thumbnail ? (
-                 <img src={p.thumbnail} alt={p.title} className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" />
+               {p.thumbnailUrl ? (
+                 <img src={p.thumbnailUrl} alt={p.title} className="w-full h-full object-cover transform group-hover:scale-105 transition duration-700" />
                ) : (
                  <div className="absolute inset-0 flex items-center justify-center text-text-muted font-medium text-sm">No Image</div>
                )}
@@ -199,7 +201,7 @@ export default function AdminProducts() {
                  <span className={`inline-flex px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-bg-card shadow-sm z-10 ${statusColors[p.status]}`}>
                     {p.status}
                  </span>
-                 <span className="text-[14px] font-bold text-text-inverted bg-text-main px-3 py-1 rounded-lg shadow-sm z-10 -mr-2">₹{p.price?.toFixed(2) || '0.00'}</span>
+                 <span className="text-[14px] font-bold text-text-inverted bg-text-main px-3 py-1 rounded-lg shadow-sm z-10 -mr-2">₹{p.basePrice?.toFixed(2) || '0.00'}</span>
                </div>
                
                <h3 className="font-bold text-lg text-text-main mt-2 mb-1 tracking-tight line-clamp-1">{p.title}</h3>
@@ -279,19 +281,32 @@ export default function AdminProducts() {
 
                   <div className="space-y-1.5 md:col-span-2">
                     <label htmlFor="p-thumb" className="block text-sm font-medium text-text-main tracking-tight">Thumbnail URL</label>
-                    <input id="p-thumb" type="url" value={formData.thumbnail || ''} onChange={e => setFormData({...formData, thumbnail: e.target.value})} className="neo-input w-full shadow-sm" />
+                    <input id="p-thumb" type="url" value={formData.thumbnailUrl || ''} onChange={e => setFormData({...formData, thumbnailUrl: e.target.value})} className="neo-input w-full shadow-sm" />
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-1.5 md:col-span-2">
                     <label htmlFor="p-file" className="block text-sm font-medium text-text-main tracking-tight">External File URL</label>
                     <input id="p-file" type="url" value={formData.fileUrl || ''} onChange={e => setFormData({...formData, fileUrl: e.target.value})} className="neo-input w-full shadow-sm" />
                   </div>
 
                   <div className="space-y-1.5">
+                    <label htmlFor="p-drive" className="block text-sm font-medium text-text-main tracking-tight">Drive Link (Marketing Assets)</label>
+                    <input id="p-drive" type="url" placeholder="https://drive.google.com/..." value={formData.driveLink || ''} onChange={e => setFormData({...formData, driveLink: e.target.value})} className="neo-input w-full shadow-sm" />
+                  </div>
+
+                  <div className="space-y-1.5 md:col-start-1">
                     <label htmlFor="p-price" className="block text-sm font-medium text-text-main tracking-tight">Base Price (₹)</label>
                     <div className="bg-bg-surface border border-border-subtle rounded-lg flex items-center focus-within:ring-1 focus-within:ring-accent focus-within:border-accent overflow-hidden px-0 shadow-sm">
                       <span className="text-text-muted font-medium pl-3 pr-1 select-none text-sm">₹</span>
-                      <input id="p-price" type="number" min="0" step="0.01" value={formData.price || 0} onChange={e => setFormData({...formData, price: parseFloat(e.target.value)})} className="w-full bg-transparent border-none py-2.5 pr-3 text-sm text-text-main font-semibold outline-none focus:outline-none focus:ring-0" />
+                      <input id="p-price" type="number" min="0" step="0.01" value={formData.basePrice || 0} onChange={e => setFormData({...formData, basePrice: parseFloat(e.target.value)})} className="w-full bg-transparent border-none py-2.5 pr-3 text-sm text-text-main font-semibold outline-none focus:outline-none focus:ring-0" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label htmlFor="p-srp" className="block text-sm font-medium text-text-main tracking-tight">Suggested Retail Price (SRP) (₹)</label>
+                    <div className="bg-bg-surface border border-border-subtle rounded-lg flex items-center focus-within:ring-1 focus-within:ring-accent focus-within:border-accent overflow-hidden px-0 shadow-sm">
+                      <span className="text-text-muted font-medium pl-3 pr-1 select-none text-sm">₹</span>
+                      <input id="p-srp" type="number" min="0" step="0.01" value={formData.srp || 0} onChange={e => setFormData({...formData, srp: parseFloat(e.target.value)})} className="w-full bg-transparent border-none py-2.5 pr-3 text-sm text-text-main font-semibold outline-none focus:outline-none focus:ring-0" />
                     </div>
                   </div>
                 </div>

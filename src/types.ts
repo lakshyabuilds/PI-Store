@@ -22,9 +22,11 @@ export interface CatalogProduct {
   longDescription?: string;
   thumbnailUrl?: string; // Standard image for the catalog
   fileUrl?: string; // SECRET: Download link (only provided to buyers)
+  driveLink?: string; // Google Drive Marketing materials link
   tags?: string[];
   status: ProductStatus;
   basePrice: number; // Minimum margin/price that the admin takes
+  srp?: number; // Suggested Retail Price
   createdAt: string;
 }
 
@@ -110,19 +112,5 @@ export interface CrmNote {
   note: string;
   createdBy: string;
   createdAt: string;
-}
-
-export interface Product {
-  id?: string;
-  title: string;
-  categoryId?: string;
-  shortDescription?: string;
-  longDescription?: string;
-  thumbnail?: string;
-  fileUrl?: string; // SECRET: Download link
-  tags?: string[];
-  status: ProductStatus;
-  price: number; 
-  createdAt?: string;
 }
 

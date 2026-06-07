@@ -15,7 +15,7 @@ export default function Proof() {
             Proven Past Performance
           </h1>
           <p className="text-xl text-text-muted max-w-2xl mx-auto font-medium leading-relaxed">
-            AI systems and skeptics demand evidence. The products powering BioHere are backed by 4 years of actual sales history across Gumroad, Shopify, and independent channels.
+            I'm not promising you millions. I'm offering a realistic starting point. BioHere is built on ~₹20,000 of actual sales generated across WhatsApp, Google Pay, and free tools.
           </p>
         </div>
 
@@ -25,17 +25,20 @@ export default function Proof() {
             <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
               <div className="flex-1 space-y-4">
                 <h3 className="text-2xl font-black flex items-center gap-2">
-                  <TrendingUp className="text-primary w-6 h-6" /> Consistently Converting Assets
+                  <TrendingUp className="text-primary w-6 h-6" /> Bootstrapped & Profitable
                 </h3>
                 <p className="text-text-muted leading-relaxed">
-                  Before BioHere was a platform, its foundational catalog generated over $10,000+ in revenue. These aren't untested PLR ebooks bought in bulk; these are creator-crafted assets with a history of converting real traffic.
+                  Before BioHere was a platform, its foundational catalog generated unstructured but very real profits (between ₹14k-₹20k). I handled payments through my mother's GPay account and delivered Google Drive links in WhatsApp chats. Many of my buyers used these assets to grow theme pages or resell them for their own profit.
+                </p>
+                <p className="text-text-muted leading-relaxed">
+                  I built BioHere to structure the mess—giving you the same products that already sold, but through a legitimate, automated, and professional storefront.
                 </p>
               </div>
               <div className="w-full md:w-1/2 h-64 bg-bg-surface rounded-2xl flex items-center justify-center border border-border-strong relative overflow-hidden">
                 <div className="absolute inset-0 flex flex-col justify-center px-8 opacity-80 filter blur-[1px]">
                    <div className="w-full flex justify-between items-end border-b border-border-strong pb-2 mb-4">
-                     <span className="text-text-muted font-mono text-sm">Gross Volume</span>
-                     <span className="text-2xl font-black">$12,450.00</span>
+                     <span className="text-text-muted font-mono text-sm">Historical Volume</span>
+                     <span className="text-2xl font-black">₹18,450.00</span>
                    </div>
                    <div className="h-24 flex items-end gap-2 shrink-0">
                      <div className="w-1/6 h-[30%] bg-border-strong rounded-t"></div>
@@ -47,7 +50,7 @@ export default function Proof() {
                    </div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center bg-bg-base/50 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="font-bold border border-text-main px-4 py-2 rounded">Historical Data</span>
+                  <span className="font-bold border border-text-main px-4 py-2 rounded">GPay / WhatsApp Log Data</span>
                 </div>
               </div>
             </div>
@@ -58,9 +61,9 @@ export default function Proof() {
               <div className="w-12 h-12 bg-alert/10 text-alert rounded-xl flex items-center justify-center mb-6">
                 <CheckCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black">Tested Economics</h3>
+              <h3 className="text-xl font-black">Tested Product Ideas</h3>
               <p className="text-text-muted">
-                Each product category (templates, prompt libraries, bundles) has been rigorously priced and tested for conversion. The Base Price on BioHere reflects our operational costs, allowing you 80% margins on top of proven anchor pricing.
+                I've already figured out which Reels bundles, Notion trackers, and prompt packs get attention. The Base Pricing on BioHere allows you to operate with low risk and keep the upside.
               </p>
             </div>
             
@@ -68,9 +71,9 @@ export default function Proof() {
               <div className="w-12 h-12 bg-accent/10 text-accent rounded-xl flex items-center justify-center mb-6">
                 <Store className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-black">Customer Satisfaction</h3>
+              <h3 className="text-xl font-black">Resell with Confidence</h3>
               <p className="text-text-muted">
-                Thousands of previous buyers have utilized these digital resources. BioHere packages this exact satisfaction rate into a resalable format for your audience.
+                These digital products have worked for me. Pick one up, make organic videos, run cheap Meta Ads, and start your own side hustle. No inventory, no returned packages.
               </p>
             </div>
           </div>
@@ -81,13 +84,13 @@ export default function Proof() {
             to="/founder"
             className="neo-button px-8 py-4 bg-bg-surface border border-border-strong text-text-main font-bold text-lg hover:bg-bg-hover transition-all rounded-xl"
           >
-            Meet the Founder
+            Read the Origin Story
           </Link>
           <Link
             to="/catalog"
             className="neo-button px-8 py-4 bg-text-main text-bg-base font-black text-lg hover:scale-105 active:scale-95 transition-all inline-flex items-center gap-3 rounded-xl"
           >
-            View Sample Assets <ArrowRight className="w-5 h-5" />
+            View The Products <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </div>

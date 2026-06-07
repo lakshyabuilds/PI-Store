@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, query, where, getDocs, doc, updateDoc, addDoc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase';
-import { Lead, CrmNote, Product } from '../../types';
+import { Lead, CrmNote, CatalogProduct } from '../../types';
 import { useAuth } from '../../contexts/AuthContext';
 import { MessageSquare, Phone, Mail, FileText, Send, MoreHorizontal, DollarSign, X } from 'lucide-react';
 import { OperationType, handleFirestoreError } from '../../lib/utils';
@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 export default function CRM() {
   const { userProfile, currentUser } = useAuth();
   const [leads, setLeads] = useState<Lead[]>([]);
-  const [products, setProducts] = useState<Record<string, Product>>({});
+  const [products, setProducts] = useState<Record<string, CatalogProduct>>({});
   const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
   const [notes, setNotes] = useState<CrmNote[]>([]);
   const [newNote, setNewNote] = useState('');
@@ -29,7 +29,7 @@ export default function CRM() {
         setLeads(snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Lead)));
         
         // Only fetch products specifically referenced by the fetched leads
-        const pMap: Record<string, Product> = {};
+        const pMap: Record<string, CatalogProduct> = {};
         const pIds = Array.from(new Set(snapshot.docs.map(d => d.data().productId).filter(Boolean)));
         
         if (pIds.length > 0) {
@@ -37,7 +37,7 @@ export default function CRM() {
           const productSnaps = await Promise.all(productPromises);
           productSnaps.forEach(snap => {
             if (snap.exists()) {
-              pMap[snap.id] = { id: snap.id, ...snap.data() } as Product;
+              pMap[snap.id] = { id: snap.id, ...snap.data() } as CatalogProduct;
             }
           });
         }

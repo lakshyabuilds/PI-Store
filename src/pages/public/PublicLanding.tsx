@@ -49,7 +49,7 @@ export default function PublicLanding() {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-alert/10 border border-alert/20 text-alert text-xs font-black tracking-widest uppercase shadow-[0_0_15px_rgba(255,51,102,0.15)]"
           >
             <span className="flex w-2 h-2 rounded-full bg-alert animate-pulse"></span>
-            Creator Commerce Infrastructure
+            Digital Flipping Starting Point
           </motion.div>
 
           <motion.h1
@@ -58,7 +58,7 @@ export default function PublicLanding() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="heading-display text-5xl md:text-7xl lg:text-8xl text-text-main tracking-tight leading-[1.05]"
           >
-            Monetize Your Audience With <span className="text-primary italic">Creator Assets.</span>
+            Start Digital Flipping Without <span className="text-primary italic">Creating Products.</span>
           </motion.h1>
 
           <motion.p
@@ -67,7 +67,7 @@ export default function PublicLanding() {
             transition={{ duration: 0.9, delay: 0.2 }}
             className="text-xl md:text-2xl text-text-muted max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            Access a library of proven digital products developed, tested, and sold by Lakshya Gupta over the past 4 years. Launch your branded storefront in 60 seconds without handling fulfillment or technical infrastructure.
+            Access a library of proven digital products developed, tested, and sold by Lakshya. Pay ₹1 once, pick a product, make content, and start selling. No inventory. No gatekeeping.
           </motion.p>
 
           <motion.div
@@ -80,7 +80,7 @@ export default function PublicLanding() {
               to="/register"
               className="neo-button px-6 sm:px-10 py-4 sm:py-5 bg-primary text-bg-base font-black text-lg sm:text-xl hover:scale-105 active:scale-95 transition-all w-full sm:w-auto shadow-[0_0_30px_rgba(57,255,20,0.4)] flex items-center justify-center gap-3"
             >
-              Start 7-Day Trial for ₹1 <ArrowRight className="w-6 h-6" />
+              Unlock The Vault for ₹1 <ArrowRight className="w-6 h-6" />
             </Link>
           </motion.div>
           <motion.p
@@ -89,7 +89,7 @@ export default function PublicLanding() {
             transition={{ duration: 1, delay: 1 }}
             className="text-sm font-bold text-text-muted mt-4"
           >
-            Maintain 80% profit margins. No lock-in.
+            Maintain 80% profit margins. No lock-in. No bots allowed.
           </motion.p>
         </div>
       </section>
@@ -268,7 +268,7 @@ export default function PublicLanding() {
               to="/register"
               className="neo-button w-full sm:w-auto px-6 sm:px-12 py-4 sm:py-6 border-b-4 border-b-[#2e8b15] bg-[#39ff14] text-black hover:bg-[#32e612] hover:translate-y-1 hover:border-b-0 text-xl sm:text-2xl font-black transition-all shadow-xl rounded-2xl flex items-center justify-center gap-3"
             >
-              Start Free Trial for ₹1
+              Unlock the Vault for ₹1
             </Link>
             <p className="mt-4 text-text-muted font-bold flex items-center gap-2">
               <Clock className="w-4 h-4" /> Takes 60 seconds to setup.

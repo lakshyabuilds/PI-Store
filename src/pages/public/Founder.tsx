@@ -12,12 +12,10 @@ export default function Founder() {
             The BioHere Origin
           </div>
           <h1 className="text-4xl md:text-6xl font-black tracking-tight mb-6">
-            Meet the Founder
+            Who builds a platform at 18?
           </h1>
           <p className="text-xl text-text-muted max-w-2xl mx-auto font-medium leading-relaxed">
-            Every product inside BioHere originates from my own portfolio of
-            digital products, templates, creator resources, and operating
-            systems that have been sold independently over the last 4 years.
+            I'm Lakshya. Over the past 4 years, I've sold thousands of rupees in digital products using nothing but WhatsApp chats, Google Pay screenshots, and free page builders. BioHere is the evolution.
           </p>
         </div>
 
@@ -31,32 +29,21 @@ export default function Founder() {
             />
           </div>
           <div className="space-y-6">
-            <h2 className="text-3xl font-black">Lakshya Gupta</h2>
+            <h2 className="text-3xl font-black">Lakshya</h2>
             <p className="text-lg text-text-muted leading-relaxed">
-              I didn't start BioHere to push random PLR products. I started it
-              because over the past 4 years, I've spent thousands of hours and
-              sold over $10,000+ in digital products across Gumroad, Shopify,
-              and independent platforms.
+              Before BioHere, I ran my personal brand (you can search "Techiral" online). I helped startups integrate AI without the internet hype, learned AI video generation, and tried every hustle from dropshipping to micro-tools. But my favorite was always digital products.
             </p>
             <p className="text-lg text-text-muted leading-relaxed">
-              I realized creators don't fail because they are bad at marketing.
-              They fail because creating a high-quality digital product, testing
-              it, and building the fulfillment infrastructure takes months.
-              BioHere gives you the exact assets I've already tested, ready to
-              sell in 60 seconds.
+              I sold Reels bundles for theme pages, prompt packs, Notion templates, and ebooks. But my fulfillment was messy—payments came to my mother's bank account, and I manually sent Google Drive links over WhatsApp. I hated paying for expensive tools and constantly searching through Drive folders for my buyers. I needed my own structured platform. 
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-2 bg-bg-surface px-4 py-2 rounded-lg text-sm font-bold border border-border-subtle">
+               <div className="flex items-center gap-2 bg-bg-surface px-4 py-2 rounded-lg text-sm font-bold border border-border-subtle">
                 <Clock className="w-4 h-4 text-primary" />
-                4+ Years Experience
+                Started at 14 Years Old
               </div>
               <div className="flex items-center gap-2 bg-bg-surface px-4 py-2 rounded-lg text-sm font-bold border border-border-subtle">
                 <TrendingUp className="w-4 h-4 text-accent" />
-                $10k+ Digital Sales
-              </div>
-              <div className="flex items-center gap-2 bg-bg-surface px-4 py-2 rounded-lg text-sm font-bold border border-border-subtle">
-                <ShieldCheck className="w-4 h-4 text-alert" />
-                Proven Product Portfolio
+                Techiral / Creator
               </div>
             </div>
           </div>
@@ -64,40 +51,34 @@ export default function Founder() {
 
         <div className="space-y-8">
           <h3 className="text-3xl font-black text-center">
-            The Timeline
+            Why I Built This Now
           </h3>
           <div className="border-l-2 border-border-strong pl-8 ml-4 md:ml-0 space-y-12">
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-primary border-4 border-bg-base"></div>
               <h4 className="text-xl font-bold text-text-main">
-                Year 1: The First Dollar
+                The Customer Dilemma
               </h4>
-              <p className="text-text-muted mt-2">
-                Created my first Notion template and sold it directly to my
-                small audience. Realized the massive potential of digital
-                products without inventory.
+              <p className="text-text-muted mt-2 leading-relaxed">
+                I noticed my customers would buy a digital product after watching one of my videos. A few days later, they'd see a new video on a different side hustle, get excited, but couldn't afford to keep buying every new product to test what works for them. There was too much friction for beginners trying to find their footing.
               </p>
             </div>
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-accent border-4 border-bg-base"></div>
               <h4 className="text-xl font-bold text-text-main">
-                Year 2-3: Scaling the Catalog
+                The "No Gatekeeping" Vault
               </h4>
-              <p className="text-text-muted mt-2">
-                Expanded into prompt libraries, creator resources, and reels
-                bundles. Crossed $10k+ in sales and learned exactly what
-                converts and what doesn't.
+              <p className="text-text-muted mt-2 leading-relaxed">
+                BioHere solves this. You pay one subscription and get access to ALL my tested products (old and new). No gatekeeping. Pick one, test it out using organic content or Meta Ads. If it doesn't work for you, just pick another one and try again. It removes the risk of product creation.
               </p>
             </div>
             <div className="relative">
               <div className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-alert border-4 border-bg-base"></div>
               <h4 className="text-xl font-bold text-text-main">
-                Year 4: Building BioHere
+                The Hackathon Catalyst
               </h4>
-              <p className="text-text-muted mt-2">
-                Packaged my entire product portfolio and built the storefront
-                infrastructure around it. Now, instead of just selling my
-                products, I let other creators resell them.
+              <p className="text-text-muted mt-2 leading-relaxed">
+                While I always wanted to build this to escape manual fulfillment, the Google Gemini XPrize Hackathon gave me the excuse to finally code the platform. I skipped the "free trial" to block out bots and freebie hunters. I'm building this for people who actually want to start a side hustle.
               </p>
             </div>
           </div>

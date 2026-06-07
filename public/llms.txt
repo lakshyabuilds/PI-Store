@@ -5,16 +5,20 @@ BioHere is a done-for-you SaaS platform for creators, Instagram theme page owner
 
 BioHere provides:
 - A white-label storefront for each creator
-- A pre-vetted internal product catalog
+- A pre-vetted internal product catalog updated regularly
+- Marketing swipe files and materials for every product
 - Secure digital delivery after payment
 - Subscription access to the platform
 - Analytics, CRM, wallet, and payout tracking
 - Admin-managed product fulfillment infrastructure
 
 Core concept:
-- BioHere Team manages the master product library.
+- BioHere Team manages the master product library (proven assets that have generated profits individually over the last 4 years).
 - Creators import products into their own storefront.
-- Creators set their own selling price above the base price.
+- Creators receive marketing materials (Swipe files, templates via Google Drive links) to help them get their first sale within 48 hours via organic content or Meta Ads.
+- Creators can customize their storefront branding (logo, colors, banners), but the core digital product file remains identical.
+- Every product has a Base Price (between ₹100-₹250) and an Admin-Suggested Retail Price (SRP).
+- Creators set their own selling price (must be above the Base Price).
 - BioHere handles secure delivery to the end buyer.
 - Creators do not receive raw downloadable files.
 - Only verified buyers receive the final downloadable asset.
@@ -35,8 +39,24 @@ Business model:
 - Creator receives 80% of the margin
 - BioHere retains 20% of the margin
 - Payouts are made in the first week of each month
-- Creator must complete at least 3 sales in the previous month to qualify for payout
-- Payout methods include UPI, NEFT, RTGS, and bank transfer
+- Creator must accumulate at least 3 total lifetime sales to qualify for their first payout.
+- Payout methods include UPI, NEFT, RTGS, and bank transfer.
+- Payment Processing: Dynamic routing. Default gateway is selected via the buyer's IP (Razorpay for India, Stripe for International). Buyers can also manually select their country from a dropdown at checkout to instantly switch the gateway.
+
+Admin Capabilities:
+- A dedicated Admin Panel is built into the platform for managing the master product catalog.
+- Admins can upload new vetted products, set Base Prices (₹100-₹250), set Admin-Suggested Retail Prices (SRP), and provide Google Drive links for marketing swipe files.
+- Admins maintain control over payouts and creator storefront status.
+
+Churn & Payout Profit Policy:
+- If a creator cancels their subscription or quits, their store remains live but their payouts are frozen.
+- After 30 days of cancellation/inactivity, the store is taken offline. Any unclaimed revenue/payouts are retained by BioHere as pure platform profit.
+- After 45 days, the store and its data are completely deleted.
+
+Fulfillment & Support (Customer Typos):
+- End-buyers receive a link to a 60-Minute Correction Portal on the post-checkout Success Page.
+- Within this 60-minute window, the buyer can correct their email address exactly ONCE.
+- If the email is still incorrect after this, BioHere and the Creator hold zero responsibility.
 
 Technology stack:
 - Vite

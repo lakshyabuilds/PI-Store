@@ -120,7 +120,7 @@ export default function PrivacyPolicy() {
               Data Retention & Account Deletion
             </h2>
             <p className="text-text-muted text-base leading-relaxed mb-6">
-              You maintain ownership of your creator presence. If you cancel your ₹99/month subscription or choose to leave the platform, your public storefront will be deactivated. You can request full deletion of your account and associated CRM data at any time by contacting our support team. We only retain transaction records strictly required by financial compliance and tax reporting laws.
+              You maintain ownership of your creator presence. If you cancel your ₹99/month subscription or your account becomes inactive, your payouts will be frozen. After 30 days of inactivity, your public storefront will be taken offline and any pending payouts will be forfeited. After 45 days, your store and associated CRM data will be permanently deleted. We only retain transaction records strictly required by financial compliance and tax reporting laws.
             </p>
             <div className="bg-bg-card border border-border-subtle p-4 rounded-xl text-text-main text-sm">
               If you have any questions about this policy or your data, please reach out via our contact page.
